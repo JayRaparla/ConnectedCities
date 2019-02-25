@@ -1,0 +1,37 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "com.jay.app",
+            "nativeLanguage": "en"
+        },
+        "jhipsterVersion": "5.8.1",
+        "applicationType": "monolith",
+        "baseName": "connectedCities",
+        "packageName": "com.jay.app",
+        "packageFolder": "com/jay/app",
+        "serverPort": "8080",
+        "authenticationType": "session",
+        "cacheProvider": "no",
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "h2Memory",
+        "prodDatabaseType": "mysql",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": false,
+        "buildTool": "maven",
+        "enableSwaggerCodegen": false,
+        "rememberMeKey": "06306e3e808806542c5fe00269ddf1e7f24bb6e663815c2f5a5b62e8858ad779d9b212a4448304c442321ce5bcfcbf3a5ae9",
+        "clientFramework": "angularX",
+        "useSass": true,
+        "clientPackageManager": "npm",
+        "testFrameworks": ["gatling"],
+        "jhiPrefix": "jhi",
+        "entitySuffix": "",
+        "dtoSuffix": "DTO",
+        "otherModules": [],
+        "enableTranslation": true,
+        "nativeLanguage": "en",
+        "languages": ["en", "fr", "de", "hi", "es"]
+    }
+}
