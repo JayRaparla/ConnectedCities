@@ -26,6 +26,8 @@ public class ConnectedResource {
     @Value("classpath:city.txt")
     Resource resourceFile;
 
+    ArrayList<String> lines = new ArrayList<>();
+
     private final Logger log = LoggerFactory.getLogger(ConnectedResource.class);
 
     /**
@@ -51,15 +53,13 @@ public class ConnectedResource {
     @GetMapping("/cities")
     public ArrayList readDataFile() {
 
-        ArrayList<String> lines = new ArrayList<>();
-
         try (Stream<String> stream = new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream("city.txt"))).lines()) {
             stream.forEach((String line) -> {
                 System.out.println(line);
                 lines.add(line);
             });
         } catch (Exception e) {
-            log.error("Exception accessing file", e);
+            log.info("Exception accessing file", e);
         }
 
         return lines;
