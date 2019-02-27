@@ -17,8 +17,8 @@ It can also easily be converted to a microservice application.
 
 Before you can run this app, you must install and configure the following dependencies on your machine:
 
-1. [Java 8][]
-2. [Node.js][]
+1. Java 8
+2. Node.js
 
 ## Run the following commands in a terminal to test the application.
 
