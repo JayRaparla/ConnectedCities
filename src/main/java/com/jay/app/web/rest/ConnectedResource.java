@@ -2,10 +2,12 @@ package com.jay.app.web.rest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.BufferedReader;
@@ -14,6 +16,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.stream.Stream;
 
 /**
@@ -23,46 +27,33 @@ import java.util.stream.Stream;
 @RequestMapping("/api/connected")
 public class ConnectedResource {
 
-    @Value("classpath:city.txt")
-    Resource resourceFile;
+    String connected;
 
-    ArrayList<String> lines = new ArrayList<>();
+    @Autowired
+    Set<ConnectedCities> connectedCities;
 
     private final Logger log = LoggerFactory.getLogger(ConnectedResource.class);
 
     /**
-     * GET connected
+     * GET : retrieve list of connected cities.
      */
-    @GetMapping("/connected")
-    public String connected() {
-        String content = "";
-
-        try {
-            File file = resourceFile.getFile();
-            content = new String(Files.readAllBytes(file.toPath()));
-            log.info(content);
-        } catch (IOException e) {
-            log.info("Exception in connected method", e);
-        }
-        return content;
+    @GetMapping("/listConnectedCities")
+    public Set<ConnectedCities> listConnectedCities() {
+        return connectedCities;
     }
 
     /**
-     * GET list of connected cities from file
+     * GET :  Check if origin and destination cities are connected..
      */
-    @GetMapping("/cities")
-    public ArrayList readDataFile() {
 
-        try (Stream<String> stream = new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream("city.txt"))).lines()) {
-            stream.forEach((String line) -> {
-                System.out.println(line);
-                lines.add(line);
-            });
-        } catch (Exception e) {
-            log.info("Exception accessing file", e);
-        }
+    @GetMapping
+    public String checkCitiesConnected(@RequestParam("origin") String origin, @RequestParam("destination") String destination ) {
+        connected="no";
+        connectedCities.forEach((ConnectedCities cities)->{
+            if (cities.checkCitiesConnected(origin, destination)){connected="yes";}
+        });
 
-        return lines;
+        return connected;
     }
 
 }

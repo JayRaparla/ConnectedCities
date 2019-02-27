@@ -1,7 +1,13 @@
 {
     "home": {
-        "title": "Welcome, Java Hipster!",
-        "subtitle": "This is your homepage",
+        "title": "Welcome!",
+        "subtitle": "This app lets you check if cities are connected.",
+        "citiesList": "The list of connected cities is in src.main.resources.city.txt. At application Startup, com/jay/app/config/ConnectedCitiesAppConfig.java loads the list of cities from the file",
+        "whatToTry": "Try the following in a seperate browser window ",
+        "try1": "http://127.0.0.1:8080/api/connected/listConnectedCities to see a list of cities,",
+        "try2": "or http://127.0.0.1:8080/api/connected/?origin=boston&destination=newark to check connectivity between an origin and destination, ",
+        "try3": "or login to the app with 'admin' 'admin' to see the api's swagger UI (click on Account->Sign-in in the top right corner in this browser window).",
+        "try4" : "this prototype application has some desirable features of a production grade application. ",
         "logged": {
             "message": "You are logged in as user \"{{username}}\"."
         },

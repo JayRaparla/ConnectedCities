@@ -41,4 +41,17 @@ export class HomeComponent implements OnInit {
     login() {
         this.modalRef = this.loginModalService.open();
     }
+
+    checkConnectivity(){
+
+    }
+    callApi(String url){
+
+    var options =  {  }
+
+    return this.http.get(url, options);
+    }
+    listConnectedCities(){
+
+    }
 }
