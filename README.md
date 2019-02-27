@@ -22,6 +22,9 @@ Before you can run this app, you must install and configure the following depend
 
 ## Run the following commands in a terminal to test the application.
 
+Note: if any of the below commands fail, try `npm audit fix --force`.
+It could be because some of the npm dependancies are depricated.I had to leave it for later in the interest of time.
+
 1.  Start application (dev profile): `./mvnw`
     Test the endpoints
     . http://127.0.0.1:8080/api/connected/?origin=boston&destination=newark
@@ -59,3 +62,10 @@ This application was generated using a rapid prototyping tool called JHipster, y
 4. com.jay.app.config.SecurityConfiguration class's configure(HttpSecurity http) was modified to allow access to
    api/connected and
    api/connected/listconnectedcities endpoints.
+
+Development env:
+Oracle JDK 8
+Node v11.6
+ubuntu 18.04 64 bit
+intellij idea
+jhipster
