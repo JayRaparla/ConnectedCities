@@ -1,12 +1,12 @@
 # connectedCities
 App to check if two cities are connected based on input from a text file.
 
-##Development env:
-. Oracle JDK 8
-. Node v11.6
-. ubuntu 18.04 64 bit
-. intellij idea
-. jhipster
+## Development env
+1. Oracle JDK 8
+2. Node v11.6
+3. ubuntu 18.04 64 bit
+4. intellij idea
+5. jhipster
 
 ## It has the following features
 
